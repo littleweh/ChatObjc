@@ -12,6 +12,9 @@
 		798DB6D0201F581800F8C4EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 798DB6CE201F581800F8C4EE /* LaunchScreen.storyboard */; };
 		798DB6D3201F581800F8C4EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 798DB6D2201F581800F8C4EE /* main.m */; };
 		798DB6F1201FFF5200F8C4EE /* RegisterLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798DB6F0201FFF5200F8C4EE /* RegisterLoginViewController.m */; };
+		798DB6F520200C2700F8C4EE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798DB6F420200C2700F8C4EE /* RegisterViewController.m */; };
+		798DB6F820200C3200F8C4EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798DB6F720200C3200F8C4EE /* LoginViewController.m */; };
+		798DB6FB20200C7600F8C4EE /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798DB6FA20200C7600F8C4EE /* NavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,12 @@
 		798DB6D2201F581800F8C4EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		798DB6EF201FFF5200F8C4EE /* RegisterLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterLoginViewController.h; sourceTree = "<group>"; };
 		798DB6F0201FFF5200F8C4EE /* RegisterLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterLoginViewController.m; sourceTree = "<group>"; };
+		798DB6F320200C2700F8C4EE /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		798DB6F420200C2700F8C4EE /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		798DB6F620200C3200F8C4EE /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		798DB6F720200C3200F8C4EE /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		798DB6F920200C7600F8C4EE /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
+		798DB6FA20200C7600F8C4EE /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,8 @@
 		798DB6C2201F581800F8C4EE /* ChatObjc */ = {
 			isa = PBXGroup;
 			children = (
+				798DB6F920200C7600F8C4EE /* NavigationController.h */,
+				798DB6FA20200C7600F8C4EE /* NavigationController.m */,
 				798DB6F22020018300F8C4EE /* VC */,
 				798DB6C3201F581800F8C4EE /* AppDelegate.h */,
 				798DB6C4201F581800F8C4EE /* AppDelegate.m */,
@@ -72,6 +83,10 @@
 			children = (
 				798DB6EF201FFF5200F8C4EE /* RegisterLoginViewController.h */,
 				798DB6F0201FFF5200F8C4EE /* RegisterLoginViewController.m */,
+				798DB6F320200C2700F8C4EE /* RegisterViewController.h */,
+				798DB6F420200C2700F8C4EE /* RegisterViewController.m */,
+				798DB6F620200C3200F8C4EE /* LoginViewController.h */,
+				798DB6F720200C3200F8C4EE /* LoginViewController.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -149,6 +164,9 @@
 				798DB6F1201FFF5200F8C4EE /* RegisterLoginViewController.m in Sources */,
 				798DB6D3201F581800F8C4EE /* main.m in Sources */,
 				798DB6C5201F581800F8C4EE /* AppDelegate.m in Sources */,
+				798DB6FB20200C7600F8C4EE /* NavigationController.m in Sources */,
+				798DB6F520200C2700F8C4EE /* RegisterViewController.m in Sources */,
+				798DB6F820200C3200F8C4EE /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

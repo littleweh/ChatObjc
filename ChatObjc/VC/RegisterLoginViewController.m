@@ -7,6 +7,9 @@
 //
 
 #import "RegisterLoginViewController.h"
+#import "NavigationController.h"
+#import "RegisterViewController.h"
+#import "LoginViewController.h"
 
 @interface RegisterLoginViewController ()
 
@@ -41,6 +44,10 @@
 }
 - (void)showRegisterVC {
     NSLog(@ "123");
+    RegisterViewController *registerVC = [[RegisterViewController alloc] init];
+    NavigationController *navController = [[NavigationController alloc]initWithRootViewController:registerVC];
+    [self presentViewController:navController animated:YES completion:nil];
+
 }
 
 - (void)showLoginVC {
