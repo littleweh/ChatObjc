@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.view.backgroundColor = [UIColor whiteColor];
+
+    // registerButton
     UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [registerButton setTitle:@ "Register" forState:UIControlStateNormal];
     registerButton.backgroundColor = [UIColor blackColor];
@@ -24,6 +26,25 @@
     registerButton.frame = CGRectMake(100, 100, 100, 30);
     [self.view addSubview:registerButton];
 
+    // loginButton
+    UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [loginButton setTitle:@ "Login" forState:UIControlStateNormal];
+    loginButton.backgroundColor = [UIColor blackColor];
+    loginButton.tintColor = [UIColor whiteColor];
+    loginButton.frame = CGRectMake(100, 140, 100, 30);
+    [self.view addSubview:loginButton];
+
+    [registerButton addTarget:self action:@selector(showRegisterVC) forControlEvents:UIControlEventTouchUpInside];
+
+    [loginButton addTarget:self action:@selector(showLoginVC) forControlEvents:UIControlEventTouchUpInside];
+
+}
+- (void)showRegisterVC {
+    NSLog(@ "123");
+}
+
+- (void)showLoginVC {
+    NSLog(@ "789");
 }
 
 - (void)didReceiveMemoryWarning {
