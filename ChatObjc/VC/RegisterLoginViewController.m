@@ -43,7 +43,6 @@
 
 }
 - (void)showRegisterVC {
-    NSLog(@ "123");
     RegisterViewController *registerVC = [[RegisterViewController alloc] init];
     NavigationController *navController = [[NavigationController alloc]initWithRootViewController:registerVC];
     [self presentViewController:navController animated:YES completion:nil];
@@ -52,6 +51,9 @@
 
 - (void)showLoginVC {
     NSLog(@ "789");
+    LoginViewController *loginVC = [[LoginViewController alloc] init];
+    NavigationController *navController = [[NavigationController alloc]initWithRootViewController:loginVC];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
