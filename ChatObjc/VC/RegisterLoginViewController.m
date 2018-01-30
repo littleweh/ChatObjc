@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+     self.view.backgroundColor = [UIColor whiteColor];
+    UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [registerButton setTitle:@ "Register" forState:UIControlStateNormal];
+    registerButton.backgroundColor = [UIColor blackColor];
+    registerButton.tintColor = [UIColor whiteColor];
+    registerButton.frame = CGRectMake(100, 100, 100, 30);
+    [self.view addSubview:registerButton];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +31,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
