@@ -18,11 +18,13 @@ static NSString* const userLogOutEndPoint = @"/user/logout";
 static NSString* const chatDetailEndPoint = @"/chat/detail";
 static NSString* const sendMessageEndPoint = @"/chat/sendMessage";
 static NSString* const userName = @"userName";
-static NSString* const age = @"age";
-static NSString* const password = @"pwd";
-static NSString* const confirmPassword = @"confirmPwd";
-static NSString* const message = @"msg";
-static NSString* const type = @"type";
-
+static NSString* const userAge = @"age";
+static NSString* const userPassword = @"pwd";
+static NSString* const userConfirmPassword = @"confirmPwd";
+static NSString* const userMessage = @"msg";
+static NSString* const messageType = @"type";
+static NSString* const nameLabel = @"Name";
+static NSString* const ageLabel = @"Age";
+static NSString* const passwordLabel = @"Pwd";
 
 #endif /* Constant_h */

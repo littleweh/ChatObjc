@@ -16,32 +16,144 @@
 @end
 
 @implementation RegisterLoginViewController
+CGFloat buttonHeight = 30.0;
+UIButton *registerButton;
+UIButton *loginButton;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
      self.view.backgroundColor = [UIColor whiteColor];
 
-    // registerButton
-    UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self setRegisterButton];
+    [self setLoginButton];
+
+}
+- (void) setRegisterButton {
+
+    UIView *parent=self.view;
+    registerButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [registerButton setTitle:@ "Register" forState:UIControlStateNormal];
     registerButton.backgroundColor = [UIColor blackColor];
     registerButton.tintColor = [UIColor whiteColor];
-    registerButton.frame = CGRectMake(100, 100, 100, 30);
     [self.view addSubview:registerButton];
+    [registerButton addTarget:self action:@selector(showRegisterVC) forControlEvents:UIControlEventTouchUpInside];
 
+    registerButton.translatesAutoresizingMaskIntoConstraints = NO;
+
+    //Trailing
+    NSLayoutConstraint *trailing =[NSLayoutConstraint
+                                   constraintWithItem:registerButton
+                                   attribute:NSLayoutAttributeTrailing
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:parent
+                                   attribute:NSLayoutAttributeTrailing
+                                   multiplier:1.0f
+                                   constant:-20.f];
+
+    //Leading
+
+    NSLayoutConstraint *leading = [NSLayoutConstraint
+                                   constraintWithItem:registerButton
+                                   attribute:NSLayoutAttributeLeading
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:parent
+                                   attribute:NSLayoutAttributeLeading
+                                   multiplier:1.0f
+                                   constant:20.f];
+
+    //Bottom
+    NSLayoutConstraint *bottom =[NSLayoutConstraint
+                                 constraintWithItem:registerButton
+                                 attribute:NSLayoutAttributeBottom
+                                 relatedBy:NSLayoutRelationEqual
+                                 toItem:parent
+                                 attribute:NSLayoutAttributeBottom
+                                 multiplier:1.0f
+                                 constant:-30.f];
+
+    //Height to be fixed for registerButton same as buttonHeight
+    NSLayoutConstraint *height = [NSLayoutConstraint
+                                  constraintWithItem:registerButton
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                  toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                  multiplier:0
+                                  constant:buttonHeight];
+
+    //Add constraints to the Parent
+    [parent addConstraint:trailing];
+    [parent addConstraint:bottom];
+    [parent addConstraint:leading];
+
+    //Add height constraint to the subview, as subview owns it.
+    [registerButton addConstraint:height];
+}
+
+- (void) setLoginButton {
     // loginButton
-    UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIView *parent=self.view;
+
     [loginButton setTitle:@ "Login" forState:UIControlStateNormal];
     loginButton.backgroundColor = [UIColor blackColor];
     loginButton.tintColor = [UIColor whiteColor];
-    loginButton.frame = CGRectMake(100, 140, 100, 30);
     [self.view addSubview:loginButton];
-
-    [registerButton addTarget:self action:@selector(showRegisterVC) forControlEvents:UIControlEventTouchUpInside];
 
     [loginButton addTarget:self action:@selector(showLoginVC) forControlEvents:UIControlEventTouchUpInside];
 
+    loginButton.translatesAutoresizingMaskIntoConstraints = NO;
+
+    //Trailing
+    NSLayoutConstraint *trailing =[NSLayoutConstraint
+                                   constraintWithItem:loginButton
+                                   attribute:NSLayoutAttributeTrailing
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:parent
+                                   attribute:NSLayoutAttributeTrailing
+                                   multiplier:1.0f
+                                   constant:-20.f];
+
+    //Leading
+    NSLayoutConstraint *leading = [NSLayoutConstraint
+                                   constraintWithItem:loginButton
+                                   attribute:NSLayoutAttributeLeading
+                                   relatedBy:NSLayoutRelationEqual
+                                   toItem:parent
+                                   attribute:NSLayoutAttributeLeading
+                                   multiplier:1.0f
+                                   constant:20.f];
+
+    //Bottom
+    NSLayoutConstraint *bottom =[NSLayoutConstraint
+                                 constraintWithItem:loginButton
+                                 attribute:NSLayoutAttributeBottom
+                                 relatedBy:NSLayoutRelationEqual
+                                 toItem:registerButton
+                                 attribute:NSLayoutAttributeTop
+                                 multiplier:1.0f
+                                 constant:-10.f];
+
+    //Height to be fixed for registerButton same as buttonHeight
+    NSLayoutConstraint *height = [NSLayoutConstraint
+                                  constraintWithItem:loginButton
+                                  attribute:NSLayoutAttributeHeight
+                                  relatedBy:NSLayoutRelationEqual
+                                  toItem:nil
+                                  attribute:NSLayoutAttributeNotAnAttribute
+                                  multiplier:0
+                                  constant:buttonHeight];
+
+    //Add constraints to the Parent
+    [parent addConstraint:trailing];
+    [parent addConstraint:bottom];
+    [parent addConstraint:leading];
+
+    //Add height constraint to the subview, as subview owns it.
+    [loginButton addConstraint:height];
 }
+
 - (void)showRegisterVC {
     RegisterViewController *registerVC = [[RegisterViewController alloc] init];
     NavigationController *navController = [[NavigationController alloc]initWithRootViewController:registerVC];
@@ -50,7 +162,6 @@
 }
 
 - (void)showLoginVC {
-    NSLog(@ "789");
     LoginViewController *loginVC = [[LoginViewController alloc] init];
     NavigationController *navController = [[NavigationController alloc]initWithRootViewController:loginVC];
     [self presentViewController:navController animated:YES completion:nil];

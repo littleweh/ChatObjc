@@ -36,6 +36,7 @@
 		798DB6FA20200C7600F8C4EE /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		798DB6FF20204CB500F8C4EE /* RegisterAPIConnectionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterAPIConnectionManager.m; sourceTree = "<group>"; };
 		798DB7012021A41700F8C4EE /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		798DB7022021B37700F8C4EE /* RegisterAPIConnectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterAPIConnectionManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +69,7 @@
 		798DB6C2201F581800F8C4EE /* ChatObjc */ = {
 			isa = PBXGroup;
 			children = (
+				798DB7022021B37700F8C4EE /* RegisterAPIConnectionManager.h */,
 				798DB6FF20204CB500F8C4EE /* RegisterAPIConnectionManager.m */,
 				798DB6F920200C7600F8C4EE /* NavigationController.h */,
 				798DB6FA20200C7600F8C4EE /* NavigationController.m */,
