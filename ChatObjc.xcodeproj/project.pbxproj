@@ -35,6 +35,7 @@
 		798DB6F920200C7600F8C4EE /* NavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationController.h; sourceTree = "<group>"; };
 		798DB6FA20200C7600F8C4EE /* NavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationController.m; sourceTree = "<group>"; };
 		798DB6FF20204CB500F8C4EE /* RegisterAPIConnectionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterAPIConnectionManager.m; sourceTree = "<group>"; };
+		798DB7012021A41700F8C4EE /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 				798DB6CE201F581800F8C4EE /* LaunchScreen.storyboard */,
 				798DB6D1201F581800F8C4EE /* Info.plist */,
 				798DB6D2201F581800F8C4EE /* main.m */,
+				798DB7012021A41700F8C4EE /* Constant.h */,
 			);
 			path = ChatObjc;
 			sourceTree = "<group>";
