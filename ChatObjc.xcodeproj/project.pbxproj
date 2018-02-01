@@ -17,6 +17,8 @@
 		798DB6FB20200C7600F8C4EE /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798DB6FA20200C7600F8C4EE /* NavigationController.m */; };
 		798DB70020204CB500F8C4EE /* RegisterAPIConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 798DB6FF20204CB500F8C4EE /* RegisterAPIConnectionManager.m */; };
 		798DB7042021C1DA00F8C4EE /* LoginAPIConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 798DB7032021C1DA00F8C4EE /* LoginAPIConnectionManager.m */; };
+		79E81ADE2022E06D00D35650 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E81ADD2022E06D00D35650 /* User.m */; };
+		79E81AE22022E43200D35650 /* ChatDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E81AE12022E43200D35650 /* ChatDetails.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		798DB7022021B37700F8C4EE /* RegisterAPIConnectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterAPIConnectionManager.h; sourceTree = "<group>"; };
 		798DB7032021C1DA00F8C4EE /* LoginAPIConnectionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginAPIConnectionManager.m; sourceTree = "<group>"; };
 		798DB7052021C1ED00F8C4EE /* LoginAPIConnectionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginAPIConnectionManager.h; sourceTree = "<group>"; };
+		79E81ADD2022E06D00D35650 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		79E81ADF2022E07D00D35650 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		79E81AE02022E36500D35650 /* ChatDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatDetails.h; sourceTree = "<group>"; };
+		79E81AE12022E43200D35650 /* ChatDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatDetails.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +78,10 @@
 		798DB6C2201F581800F8C4EE /* ChatObjc */ = {
 			isa = PBXGroup;
 			children = (
-				798DB7032021C1DA00F8C4EE /* LoginAPIConnectionManager.m */,
-				798DB7052021C1ED00F8C4EE /* LoginAPIConnectionManager.h */,
-				798DB7022021B37700F8C4EE /* RegisterAPIConnectionManager.h */,
-				798DB6FF20204CB500F8C4EE /* RegisterAPIConnectionManager.m */,
-				798DB6F920200C7600F8C4EE /* NavigationController.h */,
-				798DB6FA20200C7600F8C4EE /* NavigationController.m */,
+				79E81ADC2022E05500D35650 /* Model */,
+				798DB7012021A41700F8C4EE /* Constant.h */,
+				798DB7072021C40700F8C4EE /* NavigationController */,
+				798DB7062021C3E600F8C4EE /* APIConnectionManagers */,
 				798DB6F22020018300F8C4EE /* VC */,
 				798DB6C3201F581800F8C4EE /* AppDelegate.h */,
 				798DB6C4201F581800F8C4EE /* AppDelegate.m */,
@@ -85,7 +89,6 @@
 				798DB6CE201F581800F8C4EE /* LaunchScreen.storyboard */,
 				798DB6D1201F581800F8C4EE /* Info.plist */,
 				798DB6D2201F581800F8C4EE /* main.m */,
-				798DB7012021A41700F8C4EE /* Constant.h */,
 			);
 			path = ChatObjc;
 			sourceTree = "<group>";
@@ -101,6 +104,37 @@
 				798DB6F720200C3200F8C4EE /* LoginViewController.m */,
 			);
 			path = VC;
+			sourceTree = "<group>";
+		};
+		798DB7062021C3E600F8C4EE /* APIConnectionManagers */ = {
+			isa = PBXGroup;
+			children = (
+				798DB7052021C1ED00F8C4EE /* LoginAPIConnectionManager.h */,
+				798DB7032021C1DA00F8C4EE /* LoginAPIConnectionManager.m */,
+				798DB7022021B37700F8C4EE /* RegisterAPIConnectionManager.h */,
+				798DB6FF20204CB500F8C4EE /* RegisterAPIConnectionManager.m */,
+			);
+			path = APIConnectionManagers;
+			sourceTree = "<group>";
+		};
+		798DB7072021C40700F8C4EE /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				798DB6F920200C7600F8C4EE /* NavigationController.h */,
+				798DB6FA20200C7600F8C4EE /* NavigationController.m */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		79E81ADC2022E05500D35650 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79E81ADF2022E07D00D35650 /* User.h */,
+				79E81ADD2022E06D00D35650 /* User.m */,
+				79E81AE02022E36500D35650 /* ChatDetails.h */,
+				79E81AE12022E43200D35650 /* ChatDetails.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,11 +209,13 @@
 			files = (
 				798DB70020204CB500F8C4EE /* RegisterAPIConnectionManager.m in Sources */,
 				798DB6F1201FFF5200F8C4EE /* RegisterLoginViewController.m in Sources */,
+				79E81ADE2022E06D00D35650 /* User.m in Sources */,
 				798DB6D3201F581800F8C4EE /* main.m in Sources */,
 				798DB6C5201F581800F8C4EE /* AppDelegate.m in Sources */,
 				798DB7042021C1DA00F8C4EE /* LoginAPIConnectionManager.m in Sources */,
 				798DB6FB20200C7600F8C4EE /* NavigationController.m in Sources */,
 				798DB6F520200C2700F8C4EE /* RegisterViewController.m in Sources */,
+				79E81AE22022E43200D35650 /* ChatDetails.m in Sources */,
 				798DB6F820200C3200F8C4EE /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

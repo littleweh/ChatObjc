@@ -9,7 +9,6 @@
 #ifndef Constant_h
 #define Constant_h
 
-// Analytics constants
 static NSString* const chatAPIUrl = @"http://13.113.252.61";
 static NSString* const registerEndPoint = @"/user/register";
 static NSString* const loginEndPoint = @"/user/login";
