@@ -16,7 +16,9 @@
 @end
 
 @implementation RegisterLoginViewController
-CGFloat buttonHeight = 30.0;
+CGFloat buttonHeight = 50.0;
+CGFloat leftRightSpace = 100.0;
+
 UIButton *registerButton;
 UIButton *loginButton;
 
@@ -49,10 +51,9 @@ UIButton *loginButton;
                                    toItem:parent
                                    attribute:NSLayoutAttributeTrailing
                                    multiplier:1.0f
-                                   constant:-20.f];
+                                   constant:-leftRightSpace];
 
     //Leading
-
     NSLayoutConstraint *leading = [NSLayoutConstraint
                                    constraintWithItem:registerButton
                                    attribute:NSLayoutAttributeLeading
@@ -60,17 +61,16 @@ UIButton *loginButton;
                                    toItem:parent
                                    attribute:NSLayoutAttributeLeading
                                    multiplier:1.0f
-                                   constant:20.f];
+                                   constant:leftRightSpace];
 
-    //Bottom
-    NSLayoutConstraint *bottom =[NSLayoutConstraint
-                                 constraintWithItem:registerButton
-                                 attribute:NSLayoutAttributeBottom
-                                 relatedBy:NSLayoutRelationEqual
-                                 toItem:parent
-                                 attribute:NSLayoutAttributeBottom
-                                 multiplier:1.0f
-                                 constant:-30.f];
+    //CenterY
+    NSLayoutConstraint *centerY = [NSLayoutConstraint
+                                   constraintWithItem:registerButton
+                                   attribute:NSLayoutAttributeCenterYWithinMargins
+                                   relatedBy:NSLayoutRelationEqual toItem:parent
+                                   attribute:NSLayoutAttributeCenterYWithinMargins
+                                   multiplier:1.0f
+                                   constant:0.f];
 
     //Height to be fixed for registerButton same as buttonHeight
     NSLayoutConstraint *height = [NSLayoutConstraint
@@ -84,7 +84,7 @@ UIButton *loginButton;
 
     //Add constraints to the Parent
     [parent addConstraint:trailing];
-    [parent addConstraint:bottom];
+    [parent addConstraint:centerY];
     [parent addConstraint:leading];
 
     //Add height constraint to the subview, as subview owns it.
@@ -113,7 +113,7 @@ UIButton *loginButton;
                                    toItem:parent
                                    attribute:NSLayoutAttributeTrailing
                                    multiplier:1.0f
-                                   constant:-20.f];
+                                   constant:-leftRightSpace];
 
     //Leading
     NSLayoutConstraint *leading = [NSLayoutConstraint
@@ -123,7 +123,7 @@ UIButton *loginButton;
                                    toItem:parent
                                    attribute:NSLayoutAttributeLeading
                                    multiplier:1.0f
-                                   constant:20.f];
+                                   constant:leftRightSpace];
 
     //Bottom
     NSLayoutConstraint *bottom =[NSLayoutConstraint

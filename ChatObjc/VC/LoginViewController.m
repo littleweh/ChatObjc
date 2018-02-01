@@ -25,6 +25,9 @@
     LoginAPIConnectionManager *loginManager = [[LoginAPIConnectionManager alloc] init];
     [loginManager userLoginWithName:name
                            password:pwd
+              withCompletionHandler:^(NSString * _Nullable cookies, NSError * _Nullable error) {
+                  NSLog(@"%@", cookies);
+              }
      ];
     
 }

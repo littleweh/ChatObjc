@@ -13,6 +13,8 @@
 @implementation LoginAPIConnectionManager
 -(void)userLoginWithName: (NSString *) name
                 password: (NSString *) pwd
+   withCompletionHandler: (void (^__nonnull)(NSString * __nullable cookies,
+                                             NSError * __nullable error)) loginCompletionHandler
 {
     NSDictionary *loginParameters = @{ userName: name,
                                        userPassword: pwd,
@@ -36,18 +38,22 @@
 
     [loginRequest setHTTPBody:postLoginData];
 
-
     NSURLSession *session = [NSURLSession sharedSession];
 
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:loginRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             NSLog(@"%@", error);
+            loginCompletionHandler(nil,error);
+            return;
         } else {
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
             NSLog(@"%@", httpResponse);
             NSDictionary *fields = [httpResponse allHeaderFields];
             NSString *cookie = [fields valueForKey:@"Set-Cookie"];
             NSLog(@"%@", cookie);
+
+            NSString *cKeyCookie = [cookie componentsSeparatedByString:@";"][0];
+            loginCompletionHandler(cKeyCookie, nil);
 
         }
     }];

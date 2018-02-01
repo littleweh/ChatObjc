@@ -12,9 +12,11 @@
 @interface RegisterAPIConnectionManager: NSObject
 
 -(void)userRegisterWithName: (NSString *) name
-userAge: (NSString *) age
-password: (NSString *) pwd
-confirmPassword: (NSString *) confirmPwd;
+                    userAge: (NSString *) age
+                   password: (NSString *) pwd
+            confirmPassword: (NSString *) confirmPwd
+      withCompletionHandler: (void (^__nonnull)(NSString * __nullable cookies,
+                                                NSError * __nullable error)) loginCompletionHandler;
 
 @end
 

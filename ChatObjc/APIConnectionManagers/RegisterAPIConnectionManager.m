@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RegisterAPIConnectionManager.h"
+#import "LoginAPIConnectionManager.h"
 #import "Constant.h"
 
 @implementation RegisterAPIConnectionManager
@@ -16,6 +17,8 @@
                     userAge: (NSString *) age
                     password: (NSString *) pwd
             confirmPassword: (NSString *) confirmPwd
+      withCompletionHandler: (void (^__nonnull)(NSString * __nullable cookies,
+                                                 NSError * __nullable error)) loginCompletionHandler
 {
     NSDictionary *parameters = @{ userName: name,
                                   userAge: age,
@@ -43,6 +46,8 @@
                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                    if (error) {
                        NSLog(@"%@", error);
+                       loginCompletionHandler(nil,error);
+                       return;
                    } else {
                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                        NSLog(@"%@", httpResponse);
@@ -55,17 +60,22 @@
 
                            int sValue = [jsonObject[@"s"] intValue];
                            if (sValue <0) {
-                               NSLog(@"%d", 123);
                                NSLog(@"%@", jsonObject[@"msg"]);
                                // ToDo: error handling
+                               // msg == "帳戶已註冊請登入!#" -> loginVC
+                               // msg == "確認密碼錯誤!#" -> show alert, clean pwd, confirmPwd
                            } else {
-                               // sValue == 1 -> login API
-
-
-
+                               LoginAPIConnectionManager *loginManager = [[LoginAPIConnectionManager alloc] init];
+                               [loginManager userLoginWithName:name
+                                                      password:pwd
+                                         withCompletionHandler:loginCompletionHandler
+                                ];
                            }
 
-                        }
+                       } else {
+                           // ToDo: Error handling statusCode != 200
+                           // Ask user to re-connect later, contact AS
+                       }
                     }
     }];
     [dataTask resume];

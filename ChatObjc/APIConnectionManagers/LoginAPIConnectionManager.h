@@ -12,7 +12,9 @@
 @interface LoginAPIConnectionManager: NSObject
 
 -(void)userLoginWithName: (NSString *) name
-                password: (NSString *) pwd;
+                password: (NSString *) pwd
+   withCompletionHandler: (void (^__nonnull)(NSString * __nullable cookies,
+                                             NSError * __nullable error)) loginCompletionHandler;
 
 @end
 

@@ -22,8 +22,8 @@ static NSString* const userPassword = @"pwd";
 static NSString* const userConfirmPassword = @"confirmPwd";
 static NSString* const userMessage = @"msg";
 static NSString* const messageType = @"type";
-static NSString* const nameLabel = @"Name";
-static NSString* const ageLabel = @"Age";
-static NSString* const passwordLabel = @"Pwd";
+static NSString* const nameLabelText = @"Name";
+static NSString* const ageLabelText = @"Age";
+static NSString* const passwordLabelText = @"Pwd";
 
 #endif /* Constant_h */
